@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class animal(ABC):
 
     def __init__(self, name: str):
@@ -11,21 +12,19 @@ class animal(ABC):
 
 
 class mammals(animal):
-    height = ''
 
     def __init__(self, name: str, height: float):
-        self.name = name
+        super().__init__(name)
         self.height = height
 
     def print_name_and_2nd_arg(self):
-        print(f'name : {self.name}, height : {self.height}')
+        print(f'name : {self._name}, height : {self.height}')
 
 
 class bird(animal):
-    age = 0
 
-    def __init__(self, _name : str, age: int):
-        super().__init__(_name)
+    def __init__(self, name: str, age: int = 0):
+        super().__init__(name)
         self.age = age
 
     def print_name_and_2nd_arg(self):
@@ -33,7 +32,7 @@ class bird(animal):
 
 
 class insect(animal):
-    def __init__(self, _name : str, weight: float):
+    def __init__(self, _name: str, weight: float = 0):
         super().__init__(_name)
         self.weight = weight
 
@@ -42,9 +41,8 @@ class insect(animal):
 
 
 class reptile(animal):
-    legs = 0
 
-    def __init__(self, _name : str, legs: int):
+    def __init__(self, _name: str, legs: int = 0):
         super().__init__(_name)
         self.legs = legs
 
@@ -53,9 +51,8 @@ class reptile(animal):
 
 
 class fish(animal):
-    type_of_skin = ''
 
-    def __init__(self, _name : str, type_of_skin: str):
+    def __init__(self, _name: str, type_of_skin: str = ''):
         super().__init__(_name)
         self.type_of_skin = type_of_skin
 

@@ -6,6 +6,7 @@ insect = insect('Oleksiy', 0.5)
 reptile = reptile('Oleksandr', 4)
 fish = fish('Oleksandr', 'dirty skin (idk what types of skin fish have))')
 
+
 def print_animals():
     mammals.print_name_and_2nd_arg()
     bird.print_name_and_2nd_arg()
@@ -16,6 +17,7 @@ def print_animals():
 
 def main():
     print_animals()
+
 
 if __name__ == '__main__':
     main()
